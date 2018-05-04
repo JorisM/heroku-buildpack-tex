@@ -81,6 +81,8 @@ if [ -f "$BUILD_DIR/texlive.packages" ]; then
 fi
 
 build-step "Updating installed packages..."
+# joris: fix to 2017 releases
+tlmgr option repository ftp://tug.org/historic/systems/texlive/2017/tlnet-final
 tlmgr update --all
 
 build-step "Cleaning up temporary files..."
